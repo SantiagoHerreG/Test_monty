@@ -1,6 +1,7 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
@@ -11,6 +12,7 @@
 
 void open_read_file(char *filename, char **args);
 void exit_on_success(void);
+char **tokenize(char *str, const char *delim);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

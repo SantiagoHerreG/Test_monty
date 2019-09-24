@@ -14,6 +14,9 @@ void open_read_file(char *filename, char **args)
 	read_char = read(fd, command, ARG_MAX * 1000);
 
 	read_char = read_char;
-	printf("Leido = \"%s\n\"", command);
+	printf("Leido: \"%s\"\n", command);
+
+	args = tokenize(command, "\n ");
+	
 	free(command);
 }	

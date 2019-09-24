@@ -7,6 +7,7 @@ int main(int argc, char **argv)
 	argc = argc;
 	open_read_file(argv[1], args);
 
-	//exit_on_failure()
+	/*exit_on_failure()*/
 	exit_on_success();
+	return (0);
 }
