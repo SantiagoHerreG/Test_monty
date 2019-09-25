@@ -1,4 +1,11 @@
 #include "monty.h"
+/**
+ * tokenize - splits a string into tokens using the delimiter
+ * @str: string to be tokenized
+ * @delim: character to be the delimiter
+ * @args: resulting tokens in a malloc'ed array
+ * Return: pointer to the array of tokens
+ */
 
 char **tokenize(char *str, const char *delim, char **args)
 {
@@ -8,7 +15,7 @@ char **tokenize(char *str, const char *delim, char **args)
 	token = strtok(str, delim);
 	while (token != NULL)
 	{
-		args[i] = malloc(100);
+		args[i] = malloc(1000);
 		strcpy(args[i], token);
 		token = strtok(NULL, delim);
 		i++;
