@@ -47,6 +47,9 @@ void execute(char **args);
 void (*opcode_selector(char *op))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
 void free_dlist(stack_t *stack);
+void pop(stack_t **, unsigned int);
 void pall(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
