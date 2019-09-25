@@ -10,7 +10,6 @@ void (*opcode_selector(char *op))(stack_t **, unsigned int)
 
 	int i = 0;
 
-	printf("This is selector\n");
 	while (instructs[i].opcode != NULL)
 	{
 		if (!strcmp(instructs[i].opcode, op))

@@ -4,14 +4,12 @@ stack_t *new_stack;
 void execute(char **args)
 {
 	void (*func)(stack_t **, unsigned int);
-	unsigned int i = 0;
+	unsigned int i = 0, j = 0;
 	char *opcode[500];
 	stack_t *stack = NULL;
-	/*extern stack_t *new_stack;*/
 
 	new_stack = malloc(sizeof(stack_t));
 
-	printf("Execute\n");
 	while (args[i])
 	{
 		tokenize(args[i], " ", opcode);
@@ -20,6 +18,11 @@ void execute(char **args)
 		func = opcode_selector(opcode[0]);
 		func(&stack, i);
 		i++;
+		for (j = 0; opcode[j]; j++)
+			free(opcode[j]);
 	}
+	for (j = 0; args[j]; j++)
+		free(args[j]);
+	free_dlist(stack);
 	free (new_stack);
 }

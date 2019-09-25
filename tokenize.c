@@ -10,8 +10,6 @@ char **tokenize(char *str, const char *delim, char **args)
 	{
 		args[i] = malloc(100);
 		strcpy(args[i], token);
-		/*args[i] = token;*/
-		printf("Tokens: %s\n", args[i]);
 		token = strtok(NULL, delim);
 		i++;
 	}
