@@ -10,11 +10,9 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-
-	line_number = line_number;
 	if (!*stack)
 	{
-		/* error message*/
+		error_handling("pop", line_number + 1);
 		return;
 	}
 	else

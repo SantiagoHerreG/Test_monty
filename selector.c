@@ -6,7 +6,7 @@
  * Return: pointer to a function that takes two args and returns void
  */
 
-void (*opcode_selector(char *op))(stack_t **, unsigned int)
+void (*opcode_selector(char *op, unsigned int line_number))(stack_t **, unsigned int)
 {
 	instruction_t instructs[] = {
 		{"push", push},
@@ -27,5 +27,7 @@ void (*opcode_selector(char *op))(stack_t **, unsigned int)
 			return (instructs[i].f);
 		i++;
 	}
-	return (NULL);
+	/* Unknown instruction error */
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, op);
+	exit(EXIT_FAILURE);
 }

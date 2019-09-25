@@ -17,8 +17,9 @@ void execute(char **args)
 	while (args[i])
 	{
 		tokenize(args[i], " ", opcode);
-		if ((!strcmp("push", opcode[0]) && !opcode[1]) ||
-(!strcmp("push", opcode[0]) && !isdigit(atoi(opcode[1]))))
+		if (!strcmp("push", opcode[0]) && !opcode[1])
+			error_handling("push", i + 1);
+		else if (!strcmp("push", opcode[0]) && !atoi(opcode[1]))
 			error_handling("push", i + 1);
 		else if (opcode[1])
 			new_stack->n = atoi(opcode[1]);
@@ -27,7 +28,7 @@ void execute(char **args)
 			i++;
 			continue;
 		}
-		func = opcode_selector(opcode[0]);
+		func = opcode_selector(opcode[0], i + 1);
 		func(&stack, i);
 		i++;
 		for (j = 0; opcode[j]; j++)

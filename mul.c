@@ -14,7 +14,7 @@ void mul(stack_t **stack, unsigned int line_number)
 	line_number = line_number;
 	if (!*stack || !(*stack)->next)
 	{
-		/* error message */
+		error_handling("mul", line_number + 1);
 		return;
 	}
 	else
