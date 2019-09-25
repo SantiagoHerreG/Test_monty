@@ -22,12 +22,14 @@ void execute(char **args)
 	while (args[i])
 	{
 		tokenize(args[i], " ", opcode);
-		if (!strcmp("push", opcode[0]) && !opcode[1])
-			error_handling("push", i + 1);
-		else if (!strcmp("push", opcode[0]) && !atoi(opcode[1]))
-			error_handling("push", i + 1);
-		else if (opcode[1])
+		if (!strcmp("push", opcode[0]))
+		{
+			if (!opcode[1])
+				error_handling("push", i + 1);
+			else if (!atoi(opcode[1]) && strcmp(opcode[1], "0"))
+				error_handling("push", i + 1);
 			new_stack->n = atoi(opcode[1]);
+		}
 		if (opcode[0][0] == '#')
 		{
 			i++;

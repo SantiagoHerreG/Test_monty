@@ -57,4 +57,6 @@ void error_handling(char *id, unsigned int line_number);
 void print_error(unsigned int line_number, char *error);
 void mul(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+
 #endif /* MONTY_H */
