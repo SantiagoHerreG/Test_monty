@@ -28,7 +28,7 @@ void open_read_file(char *filename, char **args)
 
 	read_char = read(fd, command, ARG_MAX * 100 - 1);
 	if (read_char == -1) /* ERROR: Can't read */
-		exit(EXIT_FAILURE);	
+		exit(EXIT_FAILURE);
 
 	tok_result = tokenize(command, "\n", args);
 	if (!tok_result)
@@ -37,4 +37,4 @@ void open_read_file(char *filename, char **args)
 		exit_on_success();
 	}
 	free(command);
-}	
+}
