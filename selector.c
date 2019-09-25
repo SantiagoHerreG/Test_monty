@@ -13,6 +13,7 @@ void (*opcode_selector(char *op))(stack_t **, unsigned int)
 		{"pall", pall},
 		{"pop", pop},
 		{"add", add},
+		{"sub", sub},
 		{NULL, NULL}
 		};
 
