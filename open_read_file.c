@@ -8,7 +8,7 @@
 void open_read_file(char *filename, char **args)
 {
 	int fd, read_char = 1;
-	char *command;
+	char *command, **tok_result;
 
 	args = args;
 
@@ -30,6 +30,11 @@ void open_read_file(char *filename, char **args)
 	if (read_char == -1) /* ERROR: Can't read */
 		exit(EXIT_FAILURE);	
 
-	tokenize(command, "\n", args);
+	tok_result = tokenize(command, "\n", args);
+	if (!tok_result)
+	{
+		free(command);
+		exit_on_success();
+	}
 	free(command);
 }	
