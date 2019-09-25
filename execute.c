@@ -13,6 +13,11 @@ void execute(char **args)
 	stack_t *stack = NULL;
 
 	new_stack = malloc(sizeof(stack_t));
+	if (new_stack == NULL)
+	{/* ERROR: Can't malloc */
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 
 	while (args[i])
 	{

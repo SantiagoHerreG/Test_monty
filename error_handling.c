@@ -1,11 +1,21 @@
 #include "monty.h"
 
+/*
+ * print_error - prints an error
+ * @line_number: Line number error can be found
+ * @error: Error message
+*/
 void print_error(unsigned int line_number, char *error)
 {
 	fprintf(stderr, "L%u: %s\n", line_number, error);
 	exit(EXIT_FAILURE);
 }
 
+/*
+ * error_handling - selects and error
+ * @id: error identification name 
+ * @line_number: Line number error can be found
+*/
 void error_handling(char *id, unsigned int line_number)
 {
 	if (!strcmp("push", id))

@@ -27,7 +27,7 @@ void (*opcode_selector(char *op, unsigned int line_number))(stack_t **, unsigned
 			return (instructs[i].f);
 		i++;
 	}
-	/* Unknown instruction error */
+	/* ERROR: Unknown instruction error */
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, op);
 	exit(EXIT_FAILURE);
 }
