@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <linux/limits.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -51,5 +52,6 @@ void pop(stack_t **, unsigned int);
 void pall(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
+void error_handling(char *id, unsigned int line_number);
 
 #endif /* MONTY_H */
