@@ -13,11 +13,22 @@ void open_read_file(char *filename, char **args)
 	args = args;
 
 	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{/* ERROR: Can't open file */
+		fprintf(stderr, "Error: can't open %s", filename);
+		exit(EXIT_FAILURE);
+	}
 
 	command = malloc(ARG_MAX * 100);
+	if (command == NULL)
+	{/* ERROR: Can't malloc */
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 
 	read_char = read(fd, command, ARG_MAX * 100 - 1);
-
+	if (read_char == -1) /* ERROR: Can't read */
+		exit(EXIT_FAILURE);	
 	read_char = read_char;
 
 	tokenize(command, "\n", args);
