@@ -30,6 +30,10 @@ void error_handling(char *id, unsigned int line_number)
 		print_error(line_number, "cant' add, stack too short");
 	else if (!strcmp("sub", id))
 		print_error(line_number, "cant' sub, stack too short");
+	else if (!strcmp("div", id))
+		print_error(line_number, "cant' div, stack too short");	
+	else if (!strcmp("divzero", id))
+		print_error(line_number, "division by zero");	
 	else if (!strcmp("mul", id))
 		print_error(line_number, "cant' mul, stack too short");
 }
