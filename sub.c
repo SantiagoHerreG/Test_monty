@@ -14,7 +14,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	line_number = line_number;
 	if (!*stack || !(*stack)->next)
 	{
-		/* error message */
+		error_handling("sub", line_number + 1);
 		return;
 	}
 	else

@@ -45,7 +45,7 @@ void open_read_file(char *filename, char **args);
 void exit_on_success(void);
 char **tokenize(char *str, const char *delim, char **args);
 void execute(char **args);
-void (*opcode_selector(char *op))(stack_t **, unsigned int);
+void (*opcode_selector(char *op, unsigned int line_number))(stack_t **, unsigned int);
 void push(stack_t **stack, unsigned int line_number);
 void free_dlist(stack_t *stack);
 void pop(stack_t **, unsigned int);
@@ -53,6 +53,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void error_handling(char *id, unsigned int line_number);
+void print_error(unsigned int line_number, char *error);
 void mul(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
