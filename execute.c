@@ -1,4 +1,5 @@
 #include "monty.h"
+
 stack_t *new_stack;
 /**
  * execute - function that executes the commands read

@@ -1,4 +1,5 @@
 #include "monty.h"
+
 stack_t *new_stack;
 /**
  * push - function that executes the push opcode, adds a data to the stack
