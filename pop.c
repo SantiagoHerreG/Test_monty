@@ -11,10 +11,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	stack_t *temp;
 
 	if (!*stack)
-	{
 		error_handling("pop", line_number + 1);
-		return;
-	}
 	else
 	{
 		temp = *stack;
