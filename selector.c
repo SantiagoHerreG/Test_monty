@@ -16,6 +16,7 @@ void (*opcode_selector(char *op, unsigned int line_number))(stack_t **, unsigned
 		{"sub", sub},
 		{"mul", mul},
 		{"pstr", pstr},
+		{"rotr", rotr},
 		{NULL, NULL}
 		};
 
