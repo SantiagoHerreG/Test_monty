@@ -31,10 +31,8 @@ void open_read_file(char *filename, char **args)
 		exit(EXIT_FAILURE);
 
 	tok_result = tokenize(command, "\n", args);
-	if (!tok_result)
-	{
-		free(command);
-		exit_on_success();
-	}
+
 	free(command);
+	if (!tok_result)
+		exit_on_success();
 }
