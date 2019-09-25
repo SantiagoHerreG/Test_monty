@@ -13,6 +13,7 @@ void (*opcode_selector(char *op, unsigned int line_number))(stack_t **, unsigned
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
 		{"mul", mul},

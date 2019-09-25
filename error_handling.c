@@ -24,6 +24,8 @@ void error_handling(char *id, unsigned int line_number)
 		print_error(line_number, "cant' pint, stack empty");
 	else if (!strcmp("pop", id))
 		print_error(line_number, "can't pop an empty stack");
+	else if (!strcmp("swap", id))
+		print_error(line_number, "can't swap, stack too short");
 	else if (!strcmp("add", id))
 		print_error(line_number, "cant' add, stack too short");
 	else if (!strcmp("sub", id))
