@@ -11,6 +11,7 @@ void (*opcode_selector(char *op, unsigned int line_number))(stack_t **, unsigned
 	instruction_t instructs[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{"pop", pop},
 		{"add", add},
 		{"sub", sub},
