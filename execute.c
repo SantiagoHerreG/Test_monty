@@ -11,7 +11,7 @@ void execute(char **args)
 	void (*func)(stack_t **, unsigned int);
 	unsigned int i = 0, j = 0;
 	char *opcode[500], **tok_res;
-	stack_t *stack;
+	stack_t *stack = NULL;
 
 	while (args[i])
 	{
@@ -26,7 +26,8 @@ void execute(char **args)
 			if (!opcode[1])
 				error_handling("push", i + 1);
 			else if (!atoi(opcode[1]) && strcmp(opcode[1], "0"))
-				error_handling("push", i + 1);
+				if (strcmp(opcode[1], "-0") && strcmp(opcode[1], "+0"))
+					error_handling("push", i + 1);
 			new_n = atoi(opcode[1]);
 		}
 		if (opcode[0][0] == '#')

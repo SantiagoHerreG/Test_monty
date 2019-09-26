@@ -18,7 +18,7 @@ char **tokenize(char *str, const char *delim, char **args)
 
 	while (token != NULL)
 	{
-		args[i] = malloc(10000);
+		args[i] = malloc(100000);
 		if (args[i] == NULL)
 		{/* ERROR: Can't malloc */
 			fprintf(stderr, "Error: malloc failed");
