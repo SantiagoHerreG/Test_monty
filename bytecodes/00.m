@@ -1,6 +1,8 @@
-push 2
-push 4
-push 3
-pall
-div
-pall
+push 100
+pchar
+push 111
+pchar
+push 111
+pchar
+push 109
+pchar
