@@ -20,6 +20,7 @@ unsigned int)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", divi},
+		{"mod", mod},
 		{"mul", mul},
 		{"pstr", pstr},
 		{"rotr", rotr},
