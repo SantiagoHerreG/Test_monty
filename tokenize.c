@@ -18,13 +18,13 @@ char **tokenize(char *str, char *delim, char **args)
 
 	while (token != NULL)
 	{
-		args[i] = malloc(100000);
+		args[i] = malloc(1000);
 		if (args[i] == NULL)
 		{/* ERROR: Can't malloc */
 			fprintf(stderr, "Error: malloc failed");
 			exit(EXIT_FAILURE);
 		}
-		for (j = 0; j < 100000; j++)
+		for (j = 0; j < 1000; j++)
 			args[i][j] = '\0';
 		strcpy(args[i], token);
 		token = _strtok(NULL, delim);
