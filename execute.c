@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int new_n[2];
+int new_n;
 /**
  * execute - function that executes the commands read
  * @args: array of arguments by lines
@@ -13,8 +13,6 @@ void execute(char **args)
 	char *opcode[500], **tok_res;
 	stack_t *stack = NULL;
 
-	new_n[0] = 0;
-	new_n[1] = 0;
 	while (args[i])
 	{
 		tok_res = tokenize(args[i], " ", opcode);
@@ -30,21 +28,11 @@ void execute(char **args)
 			else if (!atoi(opcode[1]) && strcmp(opcode[1], "0"))
 				if (strcmp(opcode[1], "-0") && strcmp(opcode[1], "+0"))
 					error_handling("push", i + 1);
-			new_n[0] = atoi(opcode[1]);
+			new_n = atoi(opcode[1]);
 		}
 		if (opcode[0][0] == '#')
 		{
 			i++;
-			continue;
-		}
-		if (!strcmp("stack", opcode[0]))
-		{
-			new_n[1] = 0;
-			continue;
-		}
-		else if (!strcmp("queue", opcode[0]))
-		{
-			new_n[1] = 1;
 			continue;
 		}
 		func = opcode_selector(opcode[0], i + 1);

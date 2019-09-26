@@ -10,7 +10,7 @@
 #include <fcntl.h>
 #include <ctype.h>
 
-extern int new_n[2];
+extern int new_n;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
