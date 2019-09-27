@@ -56,7 +56,7 @@ void execute(char **args)
 	new_n[0] = 0, new_n[1] = 1;
 	while (args[i])
 	{
-		tok_res = tokenize(args[i], " ", opcode);
+		tok_res = tokenize(args[i], " \t", opcode);
 		if (!tok_res)
 		{
 			i++;
@@ -80,7 +80,7 @@ void execute(char **args)
 			continue;
 		func = opcode_selector(opcode[0], i + 1);
 		if (!func)
-			inst_error(args, &stack, opcode, i + 1);
+			inst_error(args, &stack, opcode, i);
 		func(&stack, i);
 		i++, free_array(opcode);
 	}
